@@ -1,0 +1,20 @@
+<div class="jumbotron text-center">
+    <h1>Eat Da Burger</h1>
+</div>
+<div class="container">
+    <h1>burgers</h1>
+    <section>
+        {{#each burgers}}
+        <p>{{burger_name}}</p>
+        <button class="btn btn-danger ">Devour Burger!</button>
+        {{/each}}
+    </section>
+    
+
+    <form class="form-inline my-3" id="add-burger" >
+        <div class="form-group mr-3">
+            <input type="text" class="form-control">
+        </div>
+        <button class="btn btn-primary" type="submit">Add Burger</button>
+    </form>
+</div>
