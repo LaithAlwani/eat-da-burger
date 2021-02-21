@@ -15,8 +15,8 @@ const orm = {
             cb(res);
         })
     },
-    updateOne: function(tableName, val, condition, cb){
-        const queryString = `UPDATE ${tableName} SET ${val} WHERE ${condition};`;
+    updateOne: function(tableName, col, val, condition, cb){
+        const queryString = `UPDATE ${tableName} SET ${col} = ${val} WHERE ${condition};`;
         connection.query(queryString, function(err,res){
             if(err) throw err;
             cb(res);

@@ -6,7 +6,7 @@
     <section>
         {{#each burgers}}
         <p>{{burger_name}}</p>
-        <button class="btn btn-danger ">Devour Burger!</button>
+        <button class="btn btn-danger devour" data-id="{{id}}" data-devoured="1" name="devour">Devour Burger!</button>
         {{/each}}
     </section>
     
@@ -15,6 +15,6 @@
         <div class="form-group mr-3">
             <input type="text" class="form-control" id="burger_name">
         </div>
-        <button class="btn btn-primary" type="submit">Add Burger</button>
+        <button class="btn btn-primary" type="submit" >Add Burger</button>
     </form>
 </div>
