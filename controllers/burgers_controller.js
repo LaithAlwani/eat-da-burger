@@ -9,5 +9,13 @@ router.get('/', (req,res)=>{
     });
 });
 
+router.post('/api/burgers', function(req,res){
+    // burger.insertOne("burger_name",req.body.burger_name)
+    console.log(req.body);
+    burger.insertOne("burger_name", req.body.burger_name, result=>{
+        res.json({ id: result.insertId }) //what does this do???
+    })
+})
+
 module.exports = router;
 

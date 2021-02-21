@@ -9,8 +9,7 @@ const orm = {
         })
     },
     insertOne: function(tableName, col, val, cb){
-        const queryString = `INSERT INTO ${tableName} (${col}) 
-        Values (${val});`;
+        const queryString = `INSERT INTO ${tableName} (${col}) VALUES ("${val}");`;
         connection.query(queryString, function(err,res){
             if(err) throw err;
             cb(res);
