@@ -1,14 +1,17 @@
 const express = require('express');
-const burger = require('../models/burger');
 const router = express.Router();
+// Import burger model
+const burger = require('../models/burger');
 
-//TODO create all routers
+//creat all routes and add logic
+//gets all burgers from database
 router.get('/', (req,res)=>{
     burger.selectAll(function(data){
         res.render('index', {burgers:data});
     });
 });
 
+//adding a burger to database
 router.post('/api/burgers', function(req,res){
     // burger.insertOne("burger_name",req.body.burger_name)
     burger.insertOne("burger_name", req.body.burger_name, result=>{
@@ -16,6 +19,7 @@ router.post('/api/burgers', function(req,res){
     })
 });
 
+//updates a burger devoured status 
 router.put("/api/burgers/:id", (req,res)=>{
     const condition = `id=${req.params.id}`
     burger.updateOne("devoured",req.body.devoured,condition, result=>{
@@ -28,6 +32,7 @@ router.put("/api/burgers/:id", (req,res)=>{
     });
 });
 
+//delets a burger from the data base
 router.delete('/api/delete/:id',(req,res)=>{
     const condition = `id = ${req.params.id}`;
     burger.deleteOne(condition, result=>{
