@@ -1,20 +1,66 @@
 <div class="jumbotron text-center">
     <h1>Eat Da Burger</h1>
-</div>
-<div class="container">
-    <h1>burgers</h1>
-    <section>
-        {{#each burgers}}
-        <p>{{burger_name}}</p>
-        <button class="btn btn-danger devour" data-id="{{id}}" data-devoured="1" name="devour">Devour Burger!</button>
-        {{/each}}
-    </section>
-    
-
-    <form class="form-inline my-3" id="add-burger" >
+    <h4>Add a Burger to Eat</h4>
+    <form class="form-inline my-3 justify-content-center" id="add-burger">
         <div class="form-group mr-3">
             <input type="text" class="form-control" id="burger_name">
         </div>
-        <button class="btn btn-primary" type="submit" >Add Burger</button>
+        <button class="btn btn-primary" type="submit"><span class="fas fa-hamburger"></span></button>
     </form>
+</div>
+<div class="container">
+    <section class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Burgers to Eat!</h3>
+                </div>
+                  
+                {{#each burgers}}
+                  
+                    {{#unless devoured}}
+                    
+                    <div class="card-body">
+                        <p>{{burger_name}} <span class="btn btn-danger devour" data-id="{{id}}" data-devoured="1" id="devourBtn">
+                            <span class="fas fa-utensils"></span>
+                        </span></p>
+                        <hr>
+                    </div>     
+                    {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Burgers I Ate!</h3>
+                </div>
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <div class="card-body">
+                            <p>{{burger_name}}</p>
+                            <hr>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            </div>
+            <ul>
+                
+
+                    
+                        
+                    
+
+
+                
+            </ul>
+        </div>
+            
+            
+        
+    </section>
+
+
+
+
 </div>
