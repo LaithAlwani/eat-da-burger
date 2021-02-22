@@ -21,7 +21,7 @@
                     {{#unless devoured}}
                     
                     <div class="card-body">
-                        <p>{{burger_name}} <span class="btn btn-danger devour" data-id="{{id}}" data-devoured="1" id="devourBtn">
+                        <p>{{burger_name}} <span class="btn btn-warning devour float-right" data-id="{{id}}" data-devoured="1">
                             <span class="fas fa-utensils"></span>
                         </span></p>
                         <hr>
@@ -38,7 +38,7 @@
                 {{#each burgers}}
                     {{#if devoured}}
                         <div class="card-body">
-                            <p>{{burger_name}}</p>
+                            <p>{{burger_name}} <span class="btn btn-danger delete-burger float-right" data-id="{{id}}"><span class="fas fa-trash"></span></span></p>
                             <hr>
                         </div>
                     {{/if}}

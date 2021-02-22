@@ -33,4 +33,16 @@ $(function(){
         });
         
     });
+
+    $(".delete-burger").click(function(event){
+        event.preventDefault();
+        const id = $(this).data("id");
+        
+        $.ajax('/api/delete/' +id,{
+            type:"DELETE",
+        }).then(function(){
+            console.log(`delete burger id ${id}`);
+            location.reload();
+        })
+    })
 });
