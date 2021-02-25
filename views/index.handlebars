@@ -1,38 +1,38 @@
-{{!-- header --}}
-<header class="jumbotron text-center">
-    <h1>Eat Da Burger</h1>
-    <h4>Add a Burger to Eat</h4>
-    {{!-- add burger form --}}
-    <form class="form-inline my-3 justify-content-center" id="add-burger">
-        <div class="form-group mr-3">
-            <input type="text" class="form-control" id="burger_name">
-        </div>
-        <button class="btn btn-primary" type="submit"><span class="fas fa-hamburger"></span></button>
-    </form>
-    
-</header>
+<div class="container">
+    {{!-- header --}}
+    <header class="jumbotron text-right">
+        <h1>Eat Da Burger</h1>
+        <h4 class="pr-3">Add a Burger to Eat</h4>
+        {{!-- add burger form --}}
+        <form class="form-inline my-3 justify-content-end" id="add-burger">
+            <div class="form-group mr-3">
+                <input type="text" class="form-control" id="burger_name">
+            </div>
+            <button class="btn btn-primary" type="submit"><span class="fas fa-hamburger"></span></button>
+        </form>
+    </header>
 
-{{!-- main display --}}
-<main class="container">
-    <section class="row">
+    {{!-- main display --}}
+
+    <main class="row">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
                     <h3 class="text-center">Burgers to Eat!</h3>
-                </div> 
+                </div>
                 {{!-- loop through burgers array --}}
                 {{#each burgers}}
                 {{!-- excuted if devoured is false --}}
-                    {{#unless devoured}}
-                    <div class="card-body">
-                        <p>{{burger_name}} 
-                            <span class="btn btn-warning devour float-right" data-id="{{id}}" data-devoured="1">
-                                <span class="fas fa-utensils"></span>
-                            </span>
-                        </p>
-                        <hr>
-                    </div>     
-                    {{/unless}}
+                {{#unless devoured}}
+                <div class="card-body">
+                    <p>{{burger_name}}
+                        <span class="btn btn-warning devour float-right" data-id="{{id}}" data-devoured="1">
+                            <span class="fas fa-utensils"></span>
+                        </span>
+                    </p>
+                    <hr>
+                </div>
+                {{/unless}}
                 {{/each}}
             </div>
         </div>
@@ -43,18 +43,18 @@
                 </div>
                 {{!-- loop through burgers array --}}
                 {{#each burgers}}
-                    {{#if devoured}}
-                        <div class="card-body">
-                            <p>{{burger_name}} 
-                                <span class="btn btn-danger delete-burger float-right" data-id="{{id}}">
-                                    <span class="fas fa-trash"></span>
-                                </span>
-                            </p>
-                            <hr>
-                        </div>
-                    {{/if}}
+                {{#if devoured}}
+                <div class="card-body">
+                    <p>{{burger_name}}
+                        <span class="btn btn-danger delete-burger float-right" data-id="{{id}}">
+                            <span class="fas fa-trash"></span>
+                        </span>
+                    </p>
+                    <hr>
+                </div>
+                {{/if}}
                 {{/each}}
             </div>
-        </div>       
-    </section>
-</main>
+        </div>
+    </main>
+</div>
