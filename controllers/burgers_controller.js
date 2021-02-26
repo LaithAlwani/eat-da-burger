@@ -13,15 +13,14 @@ router.get('/', (req,res)=>{
 
 //adding a burger to database
 router.post('/api/burgers', function(req,res){
-    // burger.insertOne("burger_name",req.body.burger_name)
     burger.insertOne("burger_name", req.body.burger_name, result=>{
-        res.json({ id: result.insertId }) //what does this do???
+        res.json({ id: result.insertId })
     })
 });
 
 //updates a burger devoured status 
 router.put("/api/burgers/:id", (req,res)=>{
-    const condition = `id=${req.params.id}`
+    const condition = {id: req.params.id};
     burger.updateOne("devoured",req.body.devoured,condition, result=>{
         if (result.changedRows === 0) {
             // If no rows were changed, then the ID must not exist, so 404
@@ -34,7 +33,7 @@ router.put("/api/burgers/:id", (req,res)=>{
 
 //delets a burger from the data base
 router.delete('/api/delete/:id',(req,res)=>{
-    const condition = `id = ${req.params.id}`;
+    const condition = {id: req.params.id};
     burger.deleteOne(condition, result=>{
         if(result.affectedRows == 0){
             return res.status(404).end();
