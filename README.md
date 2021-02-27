@@ -1,4 +1,4 @@
-# eat-da-burger# Eat Da Burger           [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+# Eat Da Burger           [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 ## Table of Content:
 1.[Description](#Description)
