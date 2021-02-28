@@ -11,6 +11,8 @@
 
 5.[Questions](#Questions)
 
+6.[Credits](#Credits)
+
 
 ## Description:
 A list of Burgers that a user would like to eat
@@ -32,3 +34,6 @@ This application is covered under the [![License: MIT](https://img.shields.io/ba
 ## Questions:
 * Github: [laithalwani](https://github.com/laithalwani)
 * laithalwani@gmail.com
+
+## Credits:
+Burger banner credit to [Stock Unlimited](https://www.stockunlimited.com/)
